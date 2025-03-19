@@ -3,11 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service Helper</title>
+    <title>Обслуживание</title>
     <link rel="stylesheet" href="styles/main.css">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-    <div class="tasks-grid"></div>
-    <script type="module" src="scripts/app.js"></script>
+    <!-- Боковое меню -->
+    <nav class="sidebar">
+        <div class="menu-header">
+            <h1>Service Helper</h1>
+            <button class="menu-close">&times;</button>
+        </div>
+        <div class="search-box">
+            <input type="text" placeholder="Поиск...">
+        </div>
+        <ul class="menu-items">
+            <li class="active"><a href="#"><i class="material-icons">home</i>Главная</a></li>
+            <li><a href="#"><i class="material-icons">store</i>Объекты</a></li>
+            <li><a href="#"><i class="material-icons">devices</i>Устройства</a></li>
+            <li><a href="#"><i class="material-icons">key</i>Ключи</a></li>
+            <li><a href="#"><i class="material-icons">description</i>Отчёты</a></li>
+            <li><a href="#"><i class="material-icons">settings</i>Настройки</a></li>
+        </ul>
+    </nav>
+
+    <!-- Основной контент -->
+    <main class="content">
+        <button class="menu-toggle"><i class="material-icons">menu</i></button>
+        
+        <!-- Заголовок и фильтры -->
+        <header class="content-header">
+            <h2>Задачи на сегодня</h2>
+            <div class="date-filter">
+                <input type="date" value="2023-10-25">
+            </div>
+        </header>
+
+        <!-- Список задач -->
+        <div class="tasks-grid">
+            <!-- Пример задачи -->
+            <div class="task-card status-new">
+                <div class="task-header">
+                    <input type="checkbox" class="route-checkbox">
+                    <h3>Магазин "Пятёрочка"</h3>
+                    <span class="task-status">Новая</span>
+                </div>
+                <div class="task-body">
+                    <p class="address">ул. Ленина, 15</p>
+                    <p class="key-info">Ключ в коробке №3</p>
+                </div>
+                <div class="task-actions">
+                    <button class="btn route-btn">
+                        <i class="material-icons">directions</i>Маршрут
+                    </button>
+                    <button class="btn complete-btn">
+                        <i class="material-icons">check</i>Завершить
+                    </button>
+                </div>
+            </div>
+
+            <!-- Ещё задачи... -->
+        </div>
+    </main>
+
+    <!-- Модальное окно завершения -->
+    <div class="modal-overlay">
+        <div class="modal">
+            <h3>Отчёт по задаче</h3>
+            <form id="report-form">
+                <div class="form-group">
+                    <label>Статус:</label>
+                    <select class="status-select">
+                        <option value="done">Выполнено</option>
+                        <option value="not-done">Не выполнено</option>
+                        <option value="postponed">Перенесено</option>
+                    </select>
+                </div>
+                <div class="form-group postponed-date hidden">
+                    <label>Новая дата:</label>
+                    <input type="date">
+                </div>
+                <div class="form-group">
+                    <label>Комментарий:</label>
+                    <textarea rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Прикрепить файлы:</label>
+                    <input type="file" multiple>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn cancel">Отмена</button>
+                    <button type="submit" class="btn submit">Отправить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="scripts/app.js"></script>
 </body>
 </html>
