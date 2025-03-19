@@ -1,0 +1,19 @@
+Версия 0.3 от 19.03
+
+Структура проекта:
+service-helper/
+├── api/
+│   ├── __init__.py
+│   ├── database.db        # SQLite database
+│   ├── models.py         # ORM модели
+│   ├── routes.py         # API endpoints
+│   ├── generate_data.py  # Генератор тестовых данных
+│   └── server.py         # Flask сервер
+├── static/
+│   ├── css/
+│   │   └── main.css      # Стили
+│   └── js/
+│       └── app.js        # Фронтенд логика
+├── templates/
+│   └── index.html        # Главная страница
+└── requirements.txt      # Зависимости
