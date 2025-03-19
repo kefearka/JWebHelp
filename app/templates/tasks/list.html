@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2>Задачи</h2>
+  
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    {% for point in points %}
+    <div class="col">
+      <div class="card h-100 {% if point.status == 'done' %}border-success{% elif point.type == 'urgent' %}border-danger{% else %}border-primary{% endif %}">
+        <div class="card-body">
+          <h5 class="card-title">{{ point.name }}</h5>
+          <p class="card-text">
+            <i class="bi bi-geo-alt"></i> {{ point.address }}<br>
+            <span class="badge bg-{% if point.type == 'planned' %}primary{% else %}danger{% endif %}">
+              {{ point.type|upper }}
+            </span>
+          </p>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-sm btn-outline-primary"
+                  onclick="window.location='https://yandex.ru/navi/?rtext={{ point.address }}'">
+            Маршрут
+          </button>
+          <button class="btn btn-sm btn-warning" data-bs-toggle="modal"
+                  data-bs-target="#completeModal{{ point.id }}">
+            Завершить
+          </button>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

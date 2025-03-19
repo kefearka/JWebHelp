@@ -69,3 +69,7 @@ Flask версия проекта
 ├── run.py
 └── instance/
     └── service.db
+
+Flask 0.41a
+
+Первые изменения для теста
