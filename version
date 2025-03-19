@@ -19,3 +19,53 @@ service-helper/
 ├── database.db
 ├── version
 └── requirements.txt      # Зависимости
+
+Версия 0.5
+
+Flask версия проекта
+
+Структура проекта:
+
+/evgeniy_service
+├── app/
+│   ├── __init__.py
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── user.py
+│   │   ├── point.py
+│   │   ├── service.py
+│   │   ├── device.py
+│   │   ├── key.py
+│   │   ├── report.py
+│   │   └── media.py
+│   ├── routes/
+│   │   ├── __init__.py
+│   │   ├── auth.py
+│   │   ├── tasks.py
+│   │   ├── points.py
+│   │   └── reports.py
+│   ├── templates/
+│   │   ├── base.html
+│   │   ├── tasks/
+│   │   │   ├── list.html
+│   │   │   └── detail.html
+│   │   ├── auth/
+│   │   │   └── login.html
+│   │   └── shared/
+│   │       └── _navbar.html
+│   ├── static/
+│   │   ├── css/
+│   │   │   └── main.css
+│   │   ├── js/
+│   │   │   └── app.js
+│   │   └── img/
+│   ├── utils/
+│   │   ├── __init__.py
+│   │   ├── navigation.py
+│   │   └── telegram.py
+│   └── config.py
+├── migrations/
+├── requirements.txt
+├── run.py
+└── instance/
+    └── service.db
