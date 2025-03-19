@@ -1,7 +1,11 @@
-from flask import jsonify, request
+from flask import jsonify, request, render_template
 from . import app, db
 from .models import Point, Service
 
+@app.route('/')
+def index():
+    return render_template('index.html')
+    
 @app.route('/api/tasks', methods=['GET'])
 def get_tasks():
     from datetime import datetime

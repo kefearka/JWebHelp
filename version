@@ -1,4 +1,4 @@
-Версия 0.3 от 19.03
+Версия 0.31 от 19.03
 
 Структура проекта:
 service-helper/
@@ -16,4 +16,6 @@ service-helper/
 │       └── app.js        # Фронтенд логика
 ├── templates/
 │   └── index.html        # Главная страница
+├── database.db
+├── version
 └── requirements.txt      # Зависимости
