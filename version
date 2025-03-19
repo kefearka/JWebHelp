@@ -20,7 +20,7 @@ service-helper/
 ├── version
 └── requirements.txt      # Зависимости
 
-Версия 0.5
+Версия 0.4a
 
 Flask версия проекта
 
